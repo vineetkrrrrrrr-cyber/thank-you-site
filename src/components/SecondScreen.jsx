@@ -107,7 +107,7 @@ export default function SecondScreen({ onNext }) {
             return (
               <SwiperSlide key={index} className="overflow-hidden rounded-3xl">
                 <motion.div
-                  className={`w-full h-full bg-gradient-to-br ${card.gradient} rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-2xl ${card.glow} relative overflow-hidden `}
+                  className={`w-full h-full bg-gradient-to-br ${card.gradient} rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-2xl ${card.glow} relative overflow-hidden `}
                   transition={{ duration: 0.3 }}
                 >
                   {/* Premium background effects */}
@@ -118,7 +118,7 @@ export default function SecondScreen({ onNext }) {
                   {/* Icon with premium animation */}
                   {card.icon &&
                     <motion.div
-                      className={`mb-6 p-4 bg-white/20 rounded-full backdrop-blur-sm ${card.iconColor} shadow-xl border border-white/30`}
+                      className={`mb-6 p-4 bg-white/20 rounded-full backdrop-blur-sm ${card.iconColor} shadow-xl border border-white/30 will-change-transform`}
                       animate={{
                         y: [-5, 5, -5],
                         scale: [1, 1.1, 1],
@@ -134,8 +134,6 @@ export default function SecondScreen({ onNext }) {
                     {card.text}
                   </p>
 
-                  {/* Premium shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
                 </motion.div>
               </SwiperSlide>
             )

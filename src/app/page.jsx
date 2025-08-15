@@ -15,15 +15,11 @@ export default function Home() {
   const [showRestartOverlay, setShowRestartOverlay] = useState(false)
 
   const screens = [
-    <FirstScreen key="first" onNext={() => handleNext()} />,
-    <SecondScreen key="second" onNext={() => handleNext()} />,
-    <ThirdScreen key="third" onNext={() => handleNext()} />,
+    <FirstScreen key="first" onNext={() => setCurrentScreen(1)} />,
+    <SecondScreen key="second" onNext={() => setCurrentScreen(2)} />,
+    <ThirdScreen key="third" onNext={() => setCurrentScreen(3)} />,
     <FourthScreen key="fourth" onShowOverlay={() => setShowHugOverlay(true)} />,
   ]
-
-  const handleNext = () => {
-    setCurrentScreen((prev) => prev + 1)
-  }
 
   const handleRestart = () => {
     setCurrentScreen(0)
@@ -46,8 +42,8 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
             animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             exit={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
-            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="min-h-screen"
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="min-h-screen will-change-transform"
           >
             {screens[currentScreen]}
           </motion.div>

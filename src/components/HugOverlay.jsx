@@ -15,14 +15,13 @@ export default function HugOverlay({ show, onClose }) {
           className="fixed inset-0 bg-gradient-to-br from-pink-950/70 via-purple-950/70 to-pink-950/70 backdrop-blur-2xl z-50 flex items-center justify-center p-4"
         >
           <motion.div
-            initial={{ scale: 0, rotate: -360, y: 200 }}
-            animate={{ scale: 1, rotate: 0, y: 0 }}
-            exit={{ scale: 0, rotate: 360, y: -200 }}
+            initial={{ scale: 0, y: 200 }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0, y: -200 }}
             transition={{
-              duration: 1.5,
+              duration: 1.2,
               ease: [0.25, 0.46, 0.45, 0.94],
               type: "spring",
-              bounce: 0.4,
             }}
             className="bg-gradient-to-br from-white via-pink-50 to-purple-50 rounded-3xl py-8 px-6 text-center shadow-2xl max-w-lg w-full relative overflow-hidden border border-white/70"
           >
@@ -30,10 +29,10 @@ export default function HugOverlay({ show, onClose }) {
             <div className="absolute inset-0 bg-gradient-to-br from-pink-100/30 via-purple-100/30 to-blue-100/30"></div>
 
             {/* Floating decorative elements */}
-            {[...Array(8)].map((_, i) => (
+            {[...Array(6)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute text-pink-400/60"
+                className="absolute text-pink-400/60 will-change-transform"
                 style={{
                   left: `${15 + i * 10}%`,
                   top: `${10 + (i % 2) * 70}%`,
@@ -57,16 +56,14 @@ export default function HugOverlay({ show, onClose }) {
             <motion.div
               className="mb-8 relative z-10 text-pink-500 flex justify-center"
               animate={{
-                // scale: [1, 1.2, 1],
                 filter: [
-                  "drop-shadow(0 0 30px rgba(236, 72, 153, 0.6))",
-                  "drop-shadow(0 0 50px rgba(236, 72, 153, 0.9))",
-                  "drop-shadow(0 0 30px rgba(236, 72, 153, 0.6))",
+                  "drop-shadow(0 0 20px rgba(236, 72, 153, 0.6))",
+                  "drop-shadow(0 0 30px rgba(236, 72, 153, 0.9))",
+                  "drop-shadow(0 0 20px rgba(236, 72, 153, 0.6))",
                 ],
               }}
               transition={{ duration: 2.5, repeat: Number.POSITIVE_INFINITY }}
             >
-              {/* <Heart size={80} fill="currentColor" /> */}
               <img src="/gifs/hug.gif" className="w-40 md:w-52" alt="" />
             </motion.div>
 
@@ -92,7 +89,7 @@ export default function HugOverlay({ show, onClose }) {
             <motion.button
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.6, duration: 1, type: "spring", bounce: 0.6 }}
+              transition={{ delay: 1.6, duration: 1, type: "spring"  }}
               whileHover={{
                 scale: 1.1,
                 boxShadow: "0 20px 40px rgba(236, 72, 153, 0.4)",

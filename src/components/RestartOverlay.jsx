@@ -22,7 +22,6 @@ export default function RestartOverlay({ show, onRestart }) {
               duration: 2,
               ease: [0.25, 0.46, 0.45, 0.94],
               type: "spring",
-              bounce: 0.3,
             }}
             className="text-center relative max-w-2xl"
           >
@@ -32,9 +31,9 @@ export default function RestartOverlay({ show, onRestart }) {
                 scale: [1, 1.3, 1],
                 rotate: [0, 10, -10, 0],
                 filter: [
-                  "drop-shadow(0 0 40px rgba(255, 255, 255, 0.6))",
-                  "drop-shadow(0 0 80px rgba(255, 255, 255, 0.9))",
-                  "drop-shadow(0 0 40px rgba(255, 255, 255, 0.6))",
+                  "drop-shadow(0 0 30px rgba(255, 255, 255, 0.6))",
+                  "drop-shadow(0 0 60px rgba(255, 255, 255, 0.9))",
+                  "drop-shadow(0 0 30px rgba(255, 255, 255, 0.6))",
                 ],
               }}
               transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
@@ -69,7 +68,7 @@ export default function RestartOverlay({ show, onRestart }) {
             <motion.button
               initial={{ opacity: 0, scale: 0.3 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.8, duration: 1.5, type: "spring", bounce: 0.6 }}
+              transition={{ delay: 1.8, duration: 1.5, type: "spring"}}
               whileHover={{
                 scale: 1.2,
                 boxShadow: "0 30px 60px rgba(255, 255, 255, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.1)",

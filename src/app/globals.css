@@ -169,3 +169,11 @@ button {
     background-position: 0% 50%;
   }
 }
+
+.swiper,
+.swiper-slide {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}

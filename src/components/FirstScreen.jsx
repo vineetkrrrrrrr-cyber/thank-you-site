@@ -1,13 +1,13 @@
 "use client"
 
 import { motion } from "motion/react"
-import { Heart, Sparkles } from "lucide-react"
+import { Heart } from "lucide-react"
 
 export default function FirstScreen({ onNext }) {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center relative">
 
-            {/* Main heart container with premium effects */}
+            {/* GIF circle */}
             <motion.div
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
@@ -17,12 +17,12 @@ export default function FirstScreen({ onNext }) {
                     type: "spring",
                     bounce: 0.4,
                 }}
-                className="mb-12 relative z-10"
+                className="mb-12 relative z-10 will-change-transform"
             >
                 <div className="relative w-48 h-48 md:w-52 md:h-52">
                     {/* Premium glow layers */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 rounded-full blur-2xl opacity-60 animate-pulse"></div>
-                    <div className="absolute inset-2 bg-gradient-to-r from-rose-300 via-pink-400 to-purple-400 rounded-full blur-xl opacity-40"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 rounded-full blur-xl opacity-60 animate-pulse"></div>
+                    <div className="absolute inset-2 bg-gradient-to-r from-rose-300 via-pink-400 to-purple-400 rounded-full blur-lg opacity-40"></div>
 
                     {/* container */}
                     <div className="relative w-full h-full rounded-full bg-gradient-to-br from-pink-400 via-purple-500 to-blue-500 p-1.5 shadow-2xl">
@@ -45,31 +45,6 @@ export default function FirstScreen({ onNext }) {
                                 <img src="/gifs/hello.gif" className="w-36 md:w-40 -mb-7 relative z-10" alt="hello" />
                             </motion.div>
 
-                            {/* Orbiting sparkles */}
-                            {[...Array(6)].map((_, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="absolute text-purple-400"
-                                    style={{
-                                        left: "50%",
-                                        top: "50%",
-                                    }}
-                                    animate={{
-                                        rotate: [0, 360],
-                                        x: Math.cos((i * 60 * Math.PI) / 180) * 90,
-                                        y: Math.sin((i * 60 * Math.PI) / 180) * 90,
-                                        scale: [1, 1.4, 1],
-                                    }}
-                                    transition={{
-                                        duration: 8,
-                                        repeat: Number.POSITIVE_INFINITY,
-                                        ease: "linear",
-                                        delay: i * 0.3,
-                                    }}
-                                >
-                                    <Sparkles size={12} />
-                                </motion.div>
-                            ))}
                         </div>
                     </div>
                 </div>

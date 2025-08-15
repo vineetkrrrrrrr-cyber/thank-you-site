@@ -95,7 +95,7 @@ I love you more than words can express, more than actions can show, and more tha
           </div>
 
           {/* Outer glow */}
-          <div className={`absolute inset-0 bg-gradient-to-br from-pink-400/20 via-purple-400/20 to-blue-400/20 rounded-3xl blur-2xl opacity-60 ${showButton && "pointer-events-none"}`}></div>
+          <div className={`absolute inset-0 bg-gradient-to-br from-pink-400/20 via-purple-400/20 to-blue-400/20 rounded-3xl blur-xl opacity-60 ${showButton && "pointer-events-none"}`}></div>
         </div>
       </motion.div>
 
@@ -111,9 +111,9 @@ I love you more than words can express, more than actions can show, and more tha
             className="text-gray-700 text-xl mb-4 font-bold flex flex-col items-center justify-center gap-2"
             animate={{
               textShadow: [
-                "0 0 20px rgba(236, 72, 153, 0.4)",
-                "0 0 40px rgba(236, 72, 153, 0.7)",
-                "0 0 20px rgba(236, 72, 153, 0.4)",
+                "0 0 10px rgba(236, 72, 153, 0.4)",
+                "0 0 30px rgba(236, 72, 153, 0.7)",
+                "0 0 10px rgba(236, 72, 153, 0.4)",
               ],
             }}
             transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
